@@ -1,3 +1,4 @@
+from utils import utils as u
 """
 Use a stack to reverse a string
 """
@@ -9,10 +10,12 @@ def string_reversal(word: str) -> str:
     for char in word:
         stack.append(char)
 
-    length = len(stack)
+    length = u.get_length(stack)
 
-    for i in range(length):
+    i = 0
+    while i < length:
         final_string += stack.pop()
+        i += 1
     return final_string
 
 
